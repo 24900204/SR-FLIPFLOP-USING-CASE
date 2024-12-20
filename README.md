@@ -51,32 +51,32 @@ Developed by:RITHIKA L
 RegisterNumber:24900204
 
 Program for flipflops and verify its truth table in quartus using Verilog programming.
-
 module sr_flipflop (
-    input clk,    // Clock signal
+    input clk,    // Clock signal 
     input reset,  // Active-high reset signal
     input s,      // Set input
     input r,      // Reset input
     output reg q, // Output
     output reg q_bar // Complement of output
 );
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
-            q <= 1'b0;      // Reset the flip-flop
-            q_bar <= 1'b1;  // Complement output
+    always@(posedge clk or posedge reset) begin
+        if(reset) begin
+        q <= 1'b0;         //Reset the flip-flop
+        q_bar <=1'b1;      //Complement output
+    end
+    else begin
+    case ({s,r})
+        2'b00: ;                        //No change
+        2'b01: begin                    //Reset
+            q <= 1'b0;
+            q_bar <= 1'b1;
         end
-        else begin
-            case ({s, r})
-                2'b00: ;             // No change
-                2'b01: begin         // Reset
-                    q <= 1'b0;
-                    q_bar <= 1'b1;
-                end
-                2'b10: begin         // Set
-                    q <= 1'b1;
-                    q_bar <= 1'b0;
-                end
-                2'b11: begin         // I
+        2'b10: begin                   //Set
+            q <= 1'b1;
+            q_bar <= 1'b0;
+        end
+        2'b11: begin                 //
+
 
 **RTL LOGIC FOR FLIPFLOPS**
 ![Screenshot 2024-12-20 072053](https://github.com/user-attachments/assets/046d32e9-6b1d-435f-b6c8-775137f01919)
