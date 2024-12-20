@@ -51,6 +51,7 @@ Developed by:RITHIKA L
 RegisterNumber:24900204
 
 Program for flipflops and verify its truth table in quartus using Verilog programming.
+```
 module sr_flipflop (
     input clk,    // Clock signal 
     input reset,  // Active-high reset signal
@@ -76,6 +77,7 @@ module sr_flipflop (
             q_bar <= 1'b0;
         end
         2'b11: begin                 //
+```
 
 
 **RTL LOGIC FOR FLIPFLOPS**
